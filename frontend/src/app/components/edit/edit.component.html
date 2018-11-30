@@ -1,0 +1,35 @@
+<div>
+    <mat-card>
+      <section class="mat-typography">
+          <h3>Edit This Task</h3>
+      </section>
+      <mat-divider></mat-divider>
+      <br>
+      <form [formGroup]="updateForm" class="create-form">
+        <mat-form-field>
+          <input matInput placeholder="Title" formControlName="title" #title>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Responsible" formControlName="responsible" #responsible>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Description" formControlName="description" #description>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Receiver" formControlName="receiver" #receiver>
+        </mat-form-field>
+        <mat-form-field class="field-full-width">
+          <mat-select placeholder="Status" formControlName="status" #status>
+            <mat-option value="Open">Open</mat-option>
+            <mat-option value="In Progress">In Progress</mat-option>
+            <mat-option value="Done">Done</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="accent" routerLink="/list">Back</button>&nbsp;
+        <button type="submit" (click)="updateTask(title.value, responsible.value, description.value, status.value)" [disabled]="updateForm.pristine || updateForm.invalid" mat-raised-button color="primary">
+          Update
+        </button>
+      </form>
+    </mat-card>
+</div>

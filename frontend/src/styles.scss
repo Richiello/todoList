@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+.create-form {
+    display: flex;
+    flex-direction: column;
+    * {
+        width: 50%;
+    }
+}
+
+.list-table {
+    th.mat-header-cell {
+        padding: 10px;
+    }
+}

@@ -1,0 +1,28 @@
+<div>
+  <mat-card>
+    <section class="mat-typography">
+        <h3>Create A New Task</h3>
+    </section>
+    <mat-divider></mat-divider>
+    <br>
+    <form [formGroup]="createForm" class="create-form">
+      <mat-form-field>
+        <input matInput placeholder="Title" formControlName="title" #title>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Responsible" formControlName="responsible" #responsible>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Description" formControlName="description" #description>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Receiver" formControlName="receiver" #receiver>
+      </mat-form-field>
+      <br>
+    </form>
+    <button mat-raised-button color="accent" routerLink="/list">Back</button>&nbsp;
+    <button type="submit" (click)="addTask(title.value, responsible.value, description.value, receiver.value)" [disabled]="createForm.pristine || createForm.invalid" mat-raised-button color="primary">
+      Save
+    </button>
+  </mat-card>
+</div>
